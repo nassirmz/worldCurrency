@@ -1,6 +1,13 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { SplitButton, MenuItem } from 'react-bootstrap';
+
+const propTypes = {
+  base: PropTypes.string.isRequired,
+  rates: PropTypes.array.isRequired,
+  handleTargetSelectOnBase: PropTypes.func.isRequired
+};
 
 class BaseCurr extends Component {
   constructor() {
@@ -14,7 +21,6 @@ class BaseCurr extends Component {
 
   render() {
     const { base, rates } = this.props;
-    console.log(rates);
     return (
       <SplitButton title={base} id="dropdown-target">
         {
@@ -28,5 +34,7 @@ class BaseCurr extends Component {
     );
   }
 }
+
+BaseCurr.propTypes = propTypes;
 
 export default BaseCurr;
