@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CurrsList from '../containers/CurrsList';
+import RatesList from '../containers/RatesList';
 
 const App = () => {
   return (
     <div>
-      <CurrsList />
+      <RatesList />
     </div>
   );
 };

@@ -1,9 +1,18 @@
-import { GET_LATEST_CURR } from '../constants';
+import { GET_RATES, CHANGE_BASE } from '../constants';
 
-export function currReducer(state = {}, action) {
-  switch(action.type) {
-    case GET_LATEST_CURR:
-      return action.currencies;
+export function ratesReducer(state = [], action) {
+  switch (action.type) {
+    case GET_RATES:
+      return action.rates;
+    default:
+      return state;
+  }
+}
+
+export function baseReducer(state = '', action) {
+  switch (action.type) {
+    case CHANGE_BASE:
+      return action.base;
     default:
       return state;
   }
