@@ -6,12 +6,10 @@ const propTypes = {
 
 const RateItem = ({ rate }) => {
   return (
-    <tbody>
-      <tr>
-        <th>{rate[1]}</th>
-        <th>{rate[0]}</th>
-      </tr>
-    </tbody>
+    <tr>
+      <td>{rate[0]}</td>
+      <td>{rate[1]}</td>
+    </tr>
   );
 };
 

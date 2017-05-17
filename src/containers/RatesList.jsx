@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Table, Col } from 'react-bootstrap';
 
 import { startGetCurrs } from '../actions';
 import RateItem from '../components/RateItem';
+import TableHead from '../components/TableHead';
 
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
@@ -23,8 +25,9 @@ class RatesList extends Component {
   render() {
     const { rates } = this.props;
     return (
-      <div>
-          <table>
+      <Table condensed hover>
+        <TableHead />
+          <tbody>
             {
               rates.map((rate, index) => {
                 return (
@@ -32,8 +35,8 @@ class RatesList extends Component {
                 )
               })
             }
-          </table>
-      </div>
+        </tbody>
+      </Table>
     );
   }
 }
