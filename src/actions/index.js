@@ -17,15 +17,12 @@ export function changeBase(base) {
   };
 }
 
-export function startGetCurrs(base = '') {
+export function startGetCurrs(base = 'EUR') {
   return (dispatch) => {
-    axios.get(`${API}/latest`)
+    axios.get(`${API}/latest?base=${base}`)
     .then((resp) => {
-      // console.log(Array.isArray(_.toPairs(resp.data.rates));
       dispatch(getRates(_.toPairs(resp.data.rates)));
-      if (base) {
-        dispatch(changeBase(base));
-      }
+      dispatch(changeBase(base));
     })
     .catch((error) => {
       console.error(error);

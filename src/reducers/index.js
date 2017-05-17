@@ -9,7 +9,7 @@ export function ratesReducer(state = [], action) {
   }
 }
 
-export function baseReducer(state = '', action) {
+export function baseReducer(state = 'EUR', action) {
   switch (action.type) {
     case CHANGE_BASE:
       return action.base;
