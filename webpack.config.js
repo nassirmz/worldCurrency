@@ -5,12 +5,15 @@ const config = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader' }
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' })

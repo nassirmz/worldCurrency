@@ -1,8 +1,12 @@
 import React from 'react';
 
+import CurrsList from '../containers/CurrsList';
+
 const App = () => {
   return (
-    <div>HELLO WORLD</div>
+    <div>
+      <CurrsList />
+    </div>
   );
 };
 
